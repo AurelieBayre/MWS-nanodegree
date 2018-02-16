@@ -167,9 +167,12 @@ main {
   width: 100%;
   color: #fff;
   padding: 1em;
+  line-height: 1;
 }
 
-
+.hero article h2 {
+  font-size: 1em;
+}
 /*
  *
  * Top News
