@@ -90,7 +90,7 @@ ul {
  */
 
 .nav {
-  width: 50%;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
   flex-wrap: wrap;
@@ -388,10 +388,9 @@ footer a {
   /* We open the drawer. */
   /* add hamburger menu default settings*/
   nav {
-    ;
     height: 100%;
     position: absolute;
-    /* This trasform moves the drawer off canvas. */
+    /* This transform moves the drawer off canvas. */
     -webkit-transform: translate(-340px, 0);
     transform: translate(-340px, 0);
     /* Optionally, we animate the drawer. */
@@ -403,7 +402,7 @@ footer a {
     -webkit-transform: translate(0, 0);
     transform: translate(0, 0);
     z-index: 1;
-    color: orange;
+    width: 30%;
   }
   nav.open li {
     float: left;
