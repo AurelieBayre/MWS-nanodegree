@@ -1,4 +1,4 @@
-body, 
+body,
 html {
   margin: 0;
   padding: 0;
@@ -17,14 +17,14 @@ h2,
 h3,
 h4,
 h5 {
-  margin: 0; 
+  margin: 0;
 }
 
 header,
-nav, 
-footer, 
-section, 
-article, 
+nav,
+footer,
+section,
+article,
 div {
   box-sizing: border-box;
 }
@@ -34,7 +34,6 @@ ul {
   padding: 0;
   margin: 0;
 }
-
 
 /*
  *
@@ -48,7 +47,6 @@ ul {
   color: #333;
   text-decoration: none;
 }
-
 
 /*
  *
@@ -85,7 +83,6 @@ ul {
   color: #212121;
 }
 
-
 /*
  *
  * Top Level Navigation
@@ -93,7 +90,7 @@ ul {
  */
 
 .nav {
-  width: 100%;
+  width: 50%;
   margin-left: auto;
   margin-right: auto;
   flex-wrap: wrap;
@@ -126,25 +123,6 @@ ul {
   color: #212121;
 }
 
-/* add hamburger menu default settings*/
-nav {
-  width: 300px;
-  height: 100%;
-  position: absolute;
-  /* This trasform moves the drawer off canvas. */
-  -webkit-transform: translate(-300px, 0);
-  transform: translate(-300px, 0);
-  /* Optionally, we animate the drawer. */
-  transition: transform 0.3s ease;
-  z-index: 1;
-}
-nav.open {
-  -webkit-transform: translate(0, 0);
-  transform: translate(0, 0);
-  z-index: 1;
-  width: 300px;
-}
-
 /*
  *
  * Main
@@ -164,7 +142,6 @@ main {
  * Content
  *
  */
-
 
 /*
  *
@@ -191,7 +168,6 @@ main {
   color: #fff;
   padding: 1em;
 }
-
 
 /*
  *
@@ -236,7 +212,6 @@ main {
   text-decoration: underline;
 }
 
-
 /*
  *
  * Sport Scores
@@ -254,7 +229,7 @@ main {
 
 .scores__table th,
 .scores__table td {
-  padding: 1em; 
+  padding: 1em;
 }
 
 .scores__table th {
@@ -337,7 +312,6 @@ main {
   width: 100%;
 }
 
-
 /*
  *
  * Recent News
@@ -374,7 +348,6 @@ main {
   text-decoration: underline;
 }
 
-
 /*
  *
  * Footer
@@ -404,37 +377,55 @@ footer a {
 *
 */
 
-
 .fa-bars {
   display: none;
 }
 
-.dark-blue {
-  background-color: darkblue;
-  color: cornsilk;
-  font-weight: 300;
-}
-
 @media screen and (max-width: 450px) {
-  
   .fa-bars {
     display: block;
   }
-
-  
-}
-
-
- /* If there is enough space (> 800px), we keep the drawer open all the time. */
- @media (min-width: 800px) {
-
   /* We open the drawer. */
+  /* add hamburger menu default settings*/
   nav {
-    position:relative;
+    ;
+    height: 100%;
+    position: absolute;
+    /* This trasform moves the drawer off canvas. */
+    -webkit-transform: translate(-340px, 0);
+    transform: translate(-340px, 0);
+    /* Optionally, we animate the drawer. */
+    transition: transform 0.3s ease;
+    z-index: 1;
+    color: red;
+  }
+  nav.open {
     -webkit-transform: translate(0, 0);
     transform: translate(0, 0);
+    z-index: 1;
+    color: orange;
   }
+  nav.open li {
+    float: left;
+    position: relative;
+    min-width: 190px;
+  }
+  nav a {
+    color: orange;
+    background-color: chartreuse;
+  }
+}
 
+/* If there is enough space (> 800px), we keep the drawer open all the time. */
+
+@media (min-width: 800px) {
+  nav {
+    position: relative;
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+    background-color: darkturquoise;
+    height: 4em;
+  }
   /* We use Flexbox on the parent. */
   body {
     display: -webkit-flex;
@@ -442,26 +433,12 @@ footer a {
     -webkit-flex-flow: row nowrap;
     flex-flow: row nowrap;
   }
-
   main {
     width: 100%;
     /* Flex-grow streches the main content to fill all available space. */
     flex-grow: 1;
-  }
-}
-
-@media screen and (min-width: 800px) {
-  main {
     width: 800px;
     margin-left: auto;
     margin-right: auto;
   }
-  main > #menu:after {
-    content: 'The drawer stays open if width > 600px';
-  }
-  main p, nav p {
-    text-decoration: line-through;
-  }
-
-  
 }
