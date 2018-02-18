@@ -60,6 +60,8 @@ ul {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
   min-height: 56px;
   transition: min-height 0.3s;
+  width: 100%;
+  flex-wrap: wrap;
 }
 
 .header__inner {
@@ -94,6 +96,7 @@ ul {
   width: 100%;
   margin-left: auto;
   margin-right: auto;
+  flex-wrap: wrap;
 }
 
 .nav__list {
@@ -123,6 +126,24 @@ ul {
   color: #212121;
 }
 
+/* add hamburger menu default settings*/
+nav {
+  width: 300px;
+  height: 100%;
+  position: absolute;
+  /* This trasform moves the drawer off canvas. */
+  -webkit-transform: translate(-300px, 0);
+  transform: translate(-300px, 0);
+  /* Optionally, we animate the drawer. */
+  transition: transform 0.3s ease;
+  z-index: 1;
+}
+nav.open {
+  -webkit-transform: translate(0, 0);
+  transform: translate(0, 0);
+  z-index: 1;
+  width: 300px;
+}
 
 /*
  *
@@ -135,6 +156,7 @@ main {
   width: 100%;
   margin-left: auto;
   margin-right: auto;
+  flex-wrap: wrap;
 }
 
 /*
@@ -382,16 +404,64 @@ footer a {
 *
 */
 
+
+.fa-bars {
+  display: none;
+}
+
+.dark-blue {
+  background-color: darkblue;
+  color: cornsilk;
+  font-weight: 300;
+}
+
 @media screen and (max-width: 450px) {
   
+  .fa-bars {
+    display: block;
+  }
 
+  
+}
+
+
+ /* If there is enough space (> 800px), we keep the drawer open all the time. */
+ @media (min-width: 800px) {
+
+  /* We open the drawer. */
+  nav {
+    position:relative;
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+
+  /* We use Flexbox on the parent. */
+  body {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row nowrap;
+    flex-flow: row nowrap;
+  }
+
+  main {
+    width: 100%;
+    /* Flex-grow streches the main content to fill all available space. */
+    flex-grow: 1;
+  }
 }
 
 @media screen and (min-width: 800px) {
-  body {
+  main {
     width: 800px;
     margin-left: auto;
     margin-right: auto;
   }
+  main > #menu:after {
+    content: 'The drawer stays open if width > 600px';
+  }
+  main p, nav p {
+    text-decoration: line-through;
+  }
 
+  
 }

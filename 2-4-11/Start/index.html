@@ -20,8 +20,7 @@
       </div>
     </header>
 
-    <nav id="drawer" class="nav">
-        <i class="fas fa-bars fa-3x"></i>
+    <nav id="slider" class="nav dark-blue">
       <ul class="nav__list">
         <li class="nav__item"><a href="#">News</a></li>
         <li class="nav__item"><a href="#">Events</a></li>
@@ -31,6 +30,9 @@
     </nav>
 
     <main>
+        <a id="menu">
+          <i class="fas fa-bars fa-3x"></i>
+        </a>
       <section class="content">
         <section class="hero">
           <article class="description">
@@ -180,5 +182,24 @@
         </ul>
       </footer>
     </main>
+<!-- adding hamburger menu javascript -->
+    <script>
+        /*
+         * Open the slider when the menu ison is clicked.
+         */
+        var menu = document.querySelector('#menu');
+        var main = document.querySelector('main');
+        var slider = document.querySelector('#slider');
+  
+        menu.addEventListener('click', function(e) {
+          slider.classList.toggle('open');
+          e.stopPropagation();
+        });
+        main.addEventListener('click', function() {
+          slider.classList.remove('open');
+        });
+  
+      </script>
+
   </body>
 </html>
