@@ -429,15 +429,16 @@ footer a {
   body {
     display: -webkit-flex;
     display: flex;
-    -webkit-flex-flow: row nowrap;
-    flex-flow: row nowrap;
-  }
-  main {
-    width: 100%;
-    /* Flex-grow streches the main content to fill all available space. */
-    flex-grow: 1;
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
     width: 800px;
     margin-left: auto;
     margin-right: auto;
+  }
+  main {
+   
+    /* Flex-grow streches the main content to fill all available space. */
+    flex-grow: 1;
+   
   }
 }
