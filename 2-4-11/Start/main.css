@@ -381,7 +381,7 @@ footer a {
   display: none;
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 449px) {
   .fa-bars {
     display: block;
   }
@@ -415,8 +415,37 @@ footer a {
   }
 }
 
+@media screen and (min-width: 450px){
+  .content {
+    display: flex;
+    flex-wrap: wrap;
+  }
+ 
+  .weather__next {
+  display: none;
+}
 
-@media (min-width: 800px) {
+.weather {
+  width: 20%;
+  order: 3;
+}
+
+.top-news {
+  width: 100%;
+  order: 1;
+}
+.scores {
+  width: 80%;
+  order: 2;
+}
+.recent-news {
+  order:4;
+}
+}
+
+/*TODO: add a breakppoint for tablets*/
+
+@media screen and (min-width: 800px) {
   nav {
     position: relative;
     -webkit-transform: translate(0, 0);
@@ -446,6 +475,9 @@ footer a {
  .weather {
    width: 33.3%;
    order: 2;
+ }
+ .weather__next {
+   display: block;
  }
  .scores {
   width: 50%;
