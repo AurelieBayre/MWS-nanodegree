@@ -370,6 +370,24 @@ footer a {
   color: #333;
   padding: 1.5em;
 }
+img{
+  max-width: 100%;
+}
+
+.snippet p {
+  overflow: hidden; /* https://stackoverflow.com/a/19718587/8775420 */
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.snippet__thumbnail {
+  max-width: 100px; 
+  ;
+}
+
+.fa-bars {
+  display: none;
+}
 
 /*
 *
@@ -377,9 +395,6 @@ footer a {
 *
 */
 
-.fa-bars {
-  display: none;
-}
 
 @media screen and (max-width: 449px) {
   .fa-bars {
@@ -447,12 +462,7 @@ footer a {
 }
 
 @media screen and (min-width: 720px){
-  .snippet p {
-    overflow: hidden; /* https://stackoverflow.com/a/19718587/8775420 */
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-  }
+  
 
 }
 
