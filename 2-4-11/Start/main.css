@@ -413,6 +413,9 @@ footer a {
     color: orange;
     background-color: chartreuse;
   }
+  .score_points {
+    display: none;
+  }
 }
 
 @media screen and (min-width: 450px){
@@ -426,7 +429,7 @@ footer a {
 }
 
 .weather {
-  width: 20%;
+  width: 30%;
   order: 3;
 }
 
@@ -435,7 +438,7 @@ footer a {
   order: 1;
 }
 .scores {
-  width: 80%;
+  width: 70%;
   order: 2;
 }
 .recent-news {
@@ -443,7 +446,15 @@ footer a {
 }
 }
 
-/*TODO: add a breakppoint for tablets*/
+@media screen and (min-width: 720px){
+  .snippet p {
+    overflow: hidden; /* https://stackoverflow.com/a/19718587/8775420 */
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+}
 
 @media screen and (min-width: 800px) {
   nav {
